@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvcyy27vbmo15"]
+[gd_scene load_steps=6 format=3 uid="uid://cvcyy27vbmo15"]
 
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="1_sjb42"]
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_ua5ty"]
-[ext_resource type="Script" uid="uid://c460t5jmusfiu" path="res://blocks/win_area.gd" id="2_pdtm5"]
 [ext_resource type="Script" uid="uid://cnmxfgosixp5m" path="res://ui/win_dialogue.gd" id="3_b3oru"]
+[ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="3_ua5ty"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjb42"]
-albedo_color = Color(1, 1, 0, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
-size = Vector3(3.8908691, 1.835083, 2.0351563)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua5ty"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.29411766)
 
 [node name="World" type="Node3D"]
 
@@ -22,6 +20,7 @@ size = Vector3(13.228943, 1, 3.582901)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6908054, 1.8300185, 0.92563355)
+material_override = SubResource("StandardMaterial3D_ua5ty")
 transparency = 0.8
 use_collision = true
 size = Vector3(14.587128, 9.705811, 0.88669205)
@@ -38,6 +37,7 @@ size = Vector3(0.6937103, 8.4609375, 3.582901)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8507286, 0.43590036, 0.29368654, -0.52560526, 0.70553493, 0.47535202, 0, -0.55875874, 0.82933027, 0, 11.883648, 0)
+shadow_enabled = true
 
 [node name="Flipper" parent="." instance=ExtResource("1_sjb42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40872192, -0.8142712, 0)
@@ -48,19 +48,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2110167, -0.8142712, 0)
 [node name="Flipper3" parent="." instance=ExtResource("1_sjb42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1335897, -0.8142712, 0)
 
-[node name="WinArea" type="Area3D" parent="."]
+[node name="WinArea" parent="." instance=ExtResource("3_ua5ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.588434, -0.4638908, 0)
-script = ExtResource("2_pdtm5")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="WinArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3729248, 0.41168213, 0.39068604)
-material_override = SubResource("StandardMaterial3D_sjb42")
-transparency = 0.6
-size = Vector3(4.106201, 1.8233643, 1.7813721)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5279541, 0.4175415, 0.2607422)
-shape = SubResource("BoxShape3D_sjb42")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -101,5 +90,4 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Next level"
 
-[connection signal="body_entered" from="WinArea" to="WinArea" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/WinDialogue/Button" to="CanvasLayer/WinDialogue" method="_on_button_pressed"]

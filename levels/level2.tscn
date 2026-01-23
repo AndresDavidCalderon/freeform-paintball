@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://tdcjnajcr5c1"]
+[gd_scene load_steps=4 format=3 uid="uid://tdcjnajcr5c1"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_raxm7"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="2_p1d34"]
+[ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="3_qyb5k"]
 
 [node name="World" type="Node3D"]
 
@@ -102,4 +103,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6408291, 0.8918989, -23.45
 [node name="Canon8" parent="." instance=ExtResource("2_p1d34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6903687, 0.8918989, -25.302742)
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.89369273, 0.3279084, 0.30625066, -0.44867963, 0.6531372, 0.6099987, 0, -0.6825598, 0.7308298, 0, 11.954547, 0)
+shadow_enabled = true
+
+[node name="WinArea" parent="." instance=ExtResource("3_qyb5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2472134, 1.000001, -15.990924)
+
+[node name="CSGBox3D" parent="WinArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3559265, 0.41168213, 0.8020325)
+size = Vector3(4.9035034, 1.8233643, 2.604065)
+
+[node name="CollisionShape3D" parent="WinArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15472412, 0.4175415, 0.6395874)
+
 [editable path="Ball"]
+[editable path="WinArea"]
