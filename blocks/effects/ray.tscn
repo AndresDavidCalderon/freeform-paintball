@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmmc73d7808qm"]
+[gd_scene load_steps=5 format=3 uid="uid://bmmc73d7808qm"]
 
 [ext_resource type="Script" uid="uid://cl4s5tg2dehyu" path="res://blocks/effects/ray.gd" id="1_lanw1"]
 
+[sub_resource type="PathExtrudeProfileCircle" id="PathExtrudeProfileCircle_lanw1"]
+radius = 0.05
+segments = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lanw1"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.42352942)
+emission_enabled = true
+emission = Color(1, 0.35000002, 0.35000002, 1)
+emission_energy_multiplier = 2.2
+
 [sub_resource type="Curve3D" id="Curve3D_lanw1"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.015348196, 0.0026289225, -0.00050854683, 0, 0, 0, 0, 0, 0, -2.6059737, -0.28606796, 0.2439946),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
 
 [node name="Ray" type="Node3D"]
 script = ExtResource("1_lanw1")
@@ -16,6 +22,8 @@ script = ExtResource("1_lanw1")
 
 [node name="PathExtrude3D" type="PathExtrude3D" parent="." node_paths=PackedStringArray("path_3d")]
 path_3d = NodePath("../Path3D")
+profile = SubResource("PathExtrudeProfileCircle_lanw1")
+material = SubResource("StandardMaterial3D_lanw1")
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_lanw1")
