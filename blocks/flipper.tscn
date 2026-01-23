@@ -1,15 +1,40 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfuii8yqcv43f"]
 
-[ext_resource type="Script" uid="uid://be1jxp5je2ue5" path="res://levels/flipper.gd" id="1_wvv0j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjb42"]
-albedo_color = Color(0.26, 0.30933326, 1, 1)
+[ext_resource type="Script" uid="uid://be1jxp5je2ue5" path="res://blocks/flipper.gd" id="1_wvv0j"]
+[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/interactive_material.tres" id="2_ie8ar"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
 size = Vector3(2.7704468, 0.25497437, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pdtm5"]
 size = Vector3(0.35131836, 0.20687866, 1)
+
+[sub_resource type="Animation" id="Animation_pdtm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:force_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:bumped")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_sjb42"]
 resource_name = "bump"
@@ -39,33 +64,6 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_pdtm5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:force_multiplier")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:bumped")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pdtm5"]
 _data = {
 &"RESET": SubResource("Animation_pdtm5"),
@@ -75,8 +73,6 @@ _data = {
 [node name="Flipper" type="Node3D"]
 script = ExtResource("1_wvv0j")
 force = 100.0
-force_multiplier = 0.0
-bumped = true
 
 [node name="FlipperBody" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4292127, 0.010429978, 0)
@@ -85,7 +81,7 @@ collision_mask = 3
 
 [node name="CSGBox3D" type="CSGBox3D" parent="FlipperBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16009521, -0.088012695, 0)
-material_override = SubResource("StandardMaterial3D_sjb42")
+material_override = ExtResource("2_ie8ar")
 size = Vector3(2.750122, 0.2253418, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlipperBody"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyj0h8c2phxbd"]
+
+[ext_resource type="Script" uid="uid://dnhj31se5bqun" path="res://blocks/camera_holder.gd" id="1_hvtgq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_txtq1"]
+radius = 0.4863152
+
+[node name="Ball" type="RigidBody3D" groups=["balls"]]
+mass = 0.1
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radial_segments = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_txtq1")
+
+[node name="CameraStabilizer" type="Node3D" parent="."]
+
+[node name="CameraPaner" type="Node3D" parent="CameraStabilizer"]
+script = ExtResource("1_hvtgq")
+
+[node name="Camera3D" type="Camera3D" parent="CameraStabilizer/CameraPaner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.241)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CameraStabilizer/CameraPaner"]
+visible = false

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://caall1osnndrl"]
+
+[ext_resource type="Script" uid="uid://cmgfqikxwiofd" path="res://blocks/canon.gd" id="1_vf83r"]
+[ext_resource type="PackedScene" uid="uid://rii3xftgqrml" path="res://blocks/effects/explosion.tscn" id="2_j3oc2"]
+[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/interactive_material.tres" id="2_whpgv"]
+[ext_resource type="PackedScene" uid="uid://bmmc73d7808qm" path="res://blocks/effects/ray.tscn" id="3_j3oc2"]
+
+[node name="Canon" type="Node3D"]
+script = ExtResource("1_vf83r")
+explosion = ExtResource("2_j3oc2")
+ray = ExtResource("3_j3oc2")
+
+[node name="Body" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.9999564, -0.009316362, 0.00025856838, 1.1465282e-09, 0.027743563, 0.9996152, -0.009319963, -0.99957186, 0.027742345, 0.050958812, 0, -0.45711517)
+material_override = ExtResource("2_whpgv")
+use_collision = true
+collision_layer = 2
+collision_mask = 2
+radius = 0.24609375
+height = 1.2387695
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(0.99994373, 0, 0.010611355, 0, 1, 0, -0.010611355, 0, 0.99994373, 0.023745716, 0, -1.0753336)
+light_color = Color(0.0768, 0.26453343, 0.64, 1)
+light_energy = 15.0

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://tdcjnajcr5c1"]
+
+[ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_raxm7"]
+[ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="2_p1d34"]
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70858765, 0, -1.2761955)
+use_collision = true
+size = Vector3(17.906677, 1, 17.039955)
+
+[node name="Ball" parent="." instance=ExtResource("1_raxm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
+
+[node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.540302, 0.8414705, 0, -0.8414705, 0.540302, 0, 0, 0)
+vertical = -1
+
+[node name="Canon" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(0.75963473, 0, 0.6503501, 0, 1, 0, -0.6503501, 0, 0.75963473, 5.413019, 1.1146924, 4.1272144)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8507286, 0.43590036, 0.29368654, -0.52560526, 0.70553493, 0.47535202, 0, -0.55875874, 0.82933027, 0, 11.883648, 0)
+
+[node name="Canon2" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(0.65393573, 0, -0.7565501, 0, 1, 0, 0.7565501, 0, 0.65393573, -4.210058, 0.9992533, 4.062625)
+
+[node name="Canon3" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(-0.618518, 0, -0.78577054, 0, 1, 0, 0.78577054, 0, -0.618518, -4.210058, 0.9827614, -3.483787)
+
+[node name="Canon4" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(-0.4154396, 0, 0.90962076, 0, 1, 0, -0.90962076, 0, -0.4154396, 5.3664026, 0.9827614, -3.483787)
+
+[editable path="Ball"]

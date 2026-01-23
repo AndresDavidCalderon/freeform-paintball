@@ -1,24 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvcyy27vbmo15"]
+[gd_scene load_steps=7 format=3 uid="uid://cvcyy27vbmo15"]
 
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="1_sjb42"]
+[ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_ua5ty"]
+[ext_resource type="Script" uid="uid://c460t5jmusfiu" path="res://blocks/win_area.gd" id="2_pdtm5"]
+[ext_resource type="Script" uid="uid://cnmxfgosixp5m" path="res://ui/win_dialogue.gd" id="3_b3oru"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_txtq1"]
-radius = 0.4863152
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjb42"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
+size = Vector3(3.8908691, 1.835083, 2.0351563)
 
 [node name="World" type="Node3D"]
 
-[node name="Ball" type="RigidBody3D" parent="."]
-mass = 0.1
-lock_rotation = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Ball"]
-radial_segments = 14
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
-shape = SubResource("SphereShape3D_txtq1")
-
-[node name="Camera3D" type="Camera3D" parent="Ball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66019, 17.240974)
+[node name="Ball" parent="." instance=ExtResource("1_ua5ty")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6891174, -1.5135596, -0.030128479)
@@ -60,4 +55,57 @@ force_multiplier = 1.0
 bumped = false
 
 [node name="WinArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.809272, -0.4638908, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.588434, -0.4638908, 0)
+script = ExtResource("2_pdtm5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WinArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3729248, 0.41168213, 0.39068604)
+material_override = SubResource("StandardMaterial3D_sjb42")
+transparency = 0.6
+size = Vector3(4.106201, 1.8233643, 1.7813721)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5279541, 0.4175415, 0.2607422)
+shape = SubResource("BoxShape3D_sjb42")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinDialogue" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 123.0
+offset_top = 94.0
+offset_right = -106.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_b3oru")
+
+[node name="Label" type="Label" parent="CanvasLayer/WinDialogue"]
+layout_mode = 1
+offset_left = 63.0
+offset_top = 39.0
+offset_right = 431.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 48
+text = "Yahoo! you won"
+
+[node name="Button" type="Button" parent="CanvasLayer/WinDialogue"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -88.0
+offset_right = -51.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Next level"
+
+[connection signal="body_entered" from="WinArea" to="WinArea" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/WinDialogue/Button" to="CanvasLayer/WinDialogue" method="_on_button_pressed"]

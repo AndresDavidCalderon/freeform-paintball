@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://17w0qg4tdier"]
+
+[ext_resource type="Script" uid="uid://dqynuh45233n2" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://bjd2moevywg4w" path="res://main_menu/levels_list.gd" id="2_d3a7t"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa53l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 436.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 96
+text = "Freeform pinball"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 176.0
+offset_right = 1121.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 46
+text = "Click on elements to use them to move your ball
+Hold right click to move the camera"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 544.0
+offset_right = 1105.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 46
+text = "Play"
+
+[node name="Levels" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 543.0
+offset_right = 185.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 46
+text = "Levels"
+
+[node name="LevelsList" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 80.0
+offset_right = -103.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_d3a7t")
+
+[node name="FlowContainer" type="FlowContainer" parent="LevelsList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = -24.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Levels" to="." method="_on_play_pressed"]
