@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var default_light_energy=15
+@export var force=1
 @export var explosion:PackedScene
 @export var ray:PackedScene
 
@@ -21,7 +22,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				var new_ray=ray.instantiate()
 				add_child(new_ray)
 				new_ray.shoot(global_position,hit["position"])
-				
+				if hit["collider"] is RigidBody3D:
+					var collider:RigidBody3D=hit["collider"]
+					collider.apply_impulse(global_position.direction_to(hit["position"])*force,collider.global_position-hit["position"])
+
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==$Body:
 		Interactive.set_selected(self)
