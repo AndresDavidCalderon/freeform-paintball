@@ -6,9 +6,9 @@
 [node name="World" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70858765, 0, -1.2761955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9189987, 0, -15.347017)
 use_collision = true
-size = Vector3(17.906677, 1, 17.039955)
+size = Vector3(26.3275, 1, 45.1816)
 
 [node name="Ball" parent="." instance=ExtResource("1_raxm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
@@ -31,5 +31,75 @@ transform = Transform3D(-0.618518, 0, -0.78577054, 0, 1, 0, 0.78577054, 0, -0.61
 
 [node name="Canon4" parent="." instance=ExtResource("2_p1d34")]
 transform = Transform3D(-0.4154396, 0, 0.90962076, 0, 1, 0, -0.90962076, 0, -0.4154396, 5.3664026, 0.9827614, -3.483787)
+
+[node name="Walls" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67663574, 1.0515137, 5.8247223)
+use_collision = true
+size = Vector3(13.960205, 3.1030273, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.252777, 1.0515137, -1.1218109)
+use_collision = true
+size = Vector3(0.80792236, 3.1030273, 14.893066)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.147502, 1.3151245, -27.846058)
+use_collision = true
+size = Vector3(17.17783, 3.4291382, 1.3835316)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.976248, 1.2381234, -17.667929)
+use_collision = true
+size = Vector3(0.94179153, 3.4291382, 18.937054)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82656336, 1.6640549, -13.806259)
+use_collision = true
+size = Vector3(5.4997044, 3.1920013, 1.3558083)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6644611, 1.7090759, -14.673155)
+use_collision = true
+size = Vector3(0.94179153, 3.4291382, 11.637669)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0484915, 1.1651173, -7.8750877)
+use_collision = true
+size = Vector3(7.9033966, 3.1030273, 0.86024475)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Walls/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.58761, 0.7147999, -13.527733)
+use_collision = true
+size = Vector3(0.8166599, 2.2023926, 14.406101)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Walls/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.58761, 0.7147999, -13.527733)
+use_collision = true
+size = Vector3(0.8166599, 2.2023926, 14.406101)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2990007, 2.1030273, -8.881865)
+use_collision = true
+size = Vector3(8.219879, 3.1030273, 0.86024475)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.897524, 1.0515137, -1.1218109)
+use_collision = true
+size = Vector3(0.80792236, 3.1030273, 14.893066)
+
+[node name="Canon5" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998583, 0.8918989, -12.93597)
+
+[node name="Canon6" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998583, 0.8918989, -23.455433)
+
+[node name="Canon7" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6408291, 0.8918989, -23.455433)
+
+[node name="Canon8" parent="." instance=ExtResource("2_p1d34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6903687, 0.8918989, -25.302742)
 
 [editable path="Ball"]

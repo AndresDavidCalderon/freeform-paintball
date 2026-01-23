@@ -24,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				new_ray.shoot(global_position,hit["position"])
 				if hit["collider"] is RigidBody3D:
 					var collider:RigidBody3D=hit["collider"]
-					collider.apply_impulse(global_position.direction_to(hit["position"])*force,collider.global_position-hit["position"])
+					collider.apply_impulse(global_position.direction_to(hit["position"])*force,hit["position"]-collider.global_position)
 
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==$Body:
