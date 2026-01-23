@@ -117,5 +117,13 @@ size = Vector3(4.9035034, 1.8233643, 2.604065)
 [node name="CollisionShape3D" parent="WinArea" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15472412, 0.4175415, 0.6395874)
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.359104, 2.8980134, -0.07571888)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "Click on a canon to select it"
+font_size = 16
+
 [editable path="Ball"]
 [editable path="WinArea"]
