@@ -37,8 +37,15 @@ size = Vector3(1.0484619, 19.062103, 2.1633987)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7281494, 6.9851027, -1.0927901)
 size = Vector3(13.8498535, 19.171326, 0.8215723)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4541245, 0.6420984, 0.01159668)
+size = Vector3(4.8125, 0.5698242, 1.7312012)
+
 [node name="Canon" parent="." instance=ExtResource("3_aaqj5")]
 transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11826531, -6.020925, -0.8849257, -0.3114488)
 
 [node name="Flipper" parent="." instance=ExtResource("4_0fm5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1564364, -1.4103073, -0.040365458)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7368279, -1.2675052, -0.040365458)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.84082186, 0.4148208, 0.34776765, -0.541312, 0.64434266, 0.5401888, 0, -0.6424533, 0.7663248, 0, 0, 8.705673)
