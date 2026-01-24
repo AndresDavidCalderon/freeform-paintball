@@ -16,15 +16,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not hit.is_empty():
 			look_at(hit["position"])
 			if event.is_action_pressed("shoot_canon"):
-				var new_exp=explosion.instantiate()
-				add_child(new_exp)
-				new_exp.global_position=hit["position"]
-				var new_ray=ray.instantiate()
-				add_child(new_ray)
-				new_ray.shoot(global_position,hit["position"])
-				if hit["collider"] is RigidBody3D:
-					var collider:RigidBody3D=hit["collider"]
-					collider.apply_impulse(global_position.direction_to(hit["position"])*force,collider.global_position-hit["position"])
+				var space_state=get_world_3d().direct_space_state
+				var end=global_position+(hit["position"]-global_position)*1.02
+				var query=PhysicsRayQueryParameters3D.create(global_position,hit["position"])
+				var intersection=space_state.intersect_ray(query)
+				if not intersection.is_empty():
+					var new_exp=explosion.instantiate()
+					add_child(new_exp)
+					new_exp.global_position=intersection["position"]
+					var new_ray=ray.instantiate()
+					add_child(new_ray)
+					new_ray.shoot(global_position,intersection["position"])
+					if intersection["collider"] is RigidBody3D:
+						var collider:RigidBody3D=intersection["collider"]
+						var offset=collider.global_position-intersection["position"]
+						collider.apply_impulse(global_position.direction_to(intersection["position"])*force,offset)
+
 
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==$Body:
