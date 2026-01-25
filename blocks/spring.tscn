@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bflbm601mjs27"]
+
+[ext_resource type="Script" uid="uid://edatxv5frxcx" path="res://blocks/spring.gd" id="1_fkll0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udvx3"]
+albedo_color = Color(1, 1, 0.08627451, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cpie4"]
+height = 0.1854248
+radius = 0.6513672
+
+[node name="Spring" type="CSGCylinder3D"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+radius = 0.7114258
+height = 0.35229492
+material = SubResource("StandardMaterial3D_udvx3")
+script = ExtResource("1_fkll0")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3823452, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16715193, -0.027158886)
+shape = SubResource("CylinderShape3D_cpie4")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
