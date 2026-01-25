@@ -12,12 +12,13 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Interactive.selected==self and event is InputEventMouse:
-		var hit=Interactive.get_raycast_to_screen(event,1)
+		var hit=Interactive.get_raycast_to_screen(event,4)
 		if not hit.is_empty():
 			look_at(hit["position"])
 			if event.is_action_pressed("shoot_canon"):
 				var space_state=get_world_3d().direct_space_state
-				var end=global_position+(hit["position"]-global_position)*1.02
+				var from=$ShootPosition.global_position
+				var end=from+(hit["position"]-from)*1.02
 				var query=PhysicsRayQueryParameters3D.create(global_position,hit["position"])
 				var intersection=space_state.intersect_ray(query)
 				if not intersection.is_empty():
@@ -26,7 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					new_exp.global_position=intersection["position"]
 					var new_ray=ray.instantiate()
 					add_child(new_ray)
-					new_ray.shoot(global_position,intersection["position"])
+					new_ray.shoot(from,intersection["position"])
 					if intersection["collider"] is RigidBody3D:
 						var collider:RigidBody3D=intersection["collider"]
 						var offset=collider.global_position-intersection["position"]

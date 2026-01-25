@@ -39,7 +39,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_sjb42"]
 resource_name = "bump"
-length = 0.4
+length = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,10 +47,10 @@ tracks/0/path = NodePath(".:force_multiplier")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.13333334, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 3.605001),
+"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0.0, 1.0, 1.0, -1.0, 0.0]
+"values": [0.0, 1.0, 1.0, -1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -59,7 +59,7 @@ tracks/1/path = NodePath(".:bumped")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.13333336),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -126,3 +126,4 @@ libraries = {
 }
 
 [connection signal="input_event" from="FlipperBody" to="." method="_on_flipper_body_input_event"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -19,6 +19,9 @@ collision_mask = 2
 radius = 0.24609375
 height = 1.2387695
 
+[node name="ShootPosition" type="Node3D" parent="."]
+transform = Transform3D(0.9999437, 0, 0.010611354, 0, 1, 0, -0.010611354, 0, 0.9999437, 0.023745714, 0, -1.1287959)
+
 [node name="Light" type="SpotLight3D" parent="."]
 transform = Transform3D(0.99994373, 0, 0.010611355, 0, 1, 0, -0.010611355, 0, 0.99994373, 0.023745716, 0, -1.0753336)
 light_color = Color(0.0768, 0.26453343, 0.64, 1)

@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="1_sjb42"]
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_ua5ty"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="2_61w3m"]
-[ext_resource type="Script" uid="uid://cnmxfgosixp5m" path="res://ui/win_dialogue.gd" id="3_b3oru"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="3_ua5ty"]
+[ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_61w3m"]
 
 [node name="World" type="Node3D"]
 
@@ -48,43 +48,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799597, -0.7021942, 0)
 [node name="WinArea" parent="." instance=ExtResource("3_ua5ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8470697, -0.4638908, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="WinDialogue" type="Panel" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 123.0
-offset_top = 94.0
-offset_right = -106.0
-offset_bottom = -105.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_b3oru")
-
-[node name="Label" type="Label" parent="CanvasLayer/WinDialogue"]
-layout_mode = 1
-offset_left = 63.0
-offset_top = 39.0
-offset_right = 431.0
-offset_bottom = 106.0
-theme_override_font_sizes/font_size = 48
-text = "Yahoo! you won"
-
-[node name="Button" type="Button" parent="CanvasLayer/WinDialogue"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -213.0
-offset_top = -88.0
-offset_right = -51.0
-offset_bottom = -35.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "Next level"
-
-[connection signal="pressed" from="CanvasLayer/WinDialogue/Button" to="CanvasLayer/WinDialogue" method="_on_button_pressed"]
+[node name="CanvasLayer" parent="." instance=ExtResource("5_61w3m")]
