@@ -1,21 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgu87ok8xd3i5"]
+[gd_scene load_steps=10 format=3 uid="uid://bgu87ok8xd3i5"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_r8unp"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="2_kvvkh"]
+[ext_resource type="Script" uid="uid://ff8n24t8x86o" path="res://blocks/temporal.gd" id="3_1xfnq"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="3_aaqj5"]
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="4_0fm5q"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_cpie4"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="6_udvx3"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udvx3"]
+albedo_color = Color(0.45566672, 1, 0.29000002, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xfnq"]
+transparency = 1
+albedo_color = Color(1, 0.29000002, 0.29000002, 0.6627451)
+
 [node name="Level3" type="Node3D"]
 
 [node name="Ball" parent="." instance=ExtResource("1_r8unp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0437783, 0, 0.0542233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15895188, 0, 0.0542233)
 
 [node name="Glass" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1304045, 6.834716, 1.2261639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.902591, 3.069684, 1.2261639)
 use_collision = true
-size = Vector3(24.70227, 19.4721, 0.8215723)
+size = Vector3(30.246643, 27.002163, 0.8215723)
+material = ExtResource("2_kvvkh")
+
+[node name="Temporal" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.259338, 4.3377566, -0.10506058)
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(4.331398, 0.81060314, 2.1633987)
+material = SubResource("StandardMaterial3D_udvx3")
+script = ExtResource("3_1xfnq")
+on_material = SubResource("StandardMaterial3D_udvx3")
+off_material = SubResource("StandardMaterial3D_1xfnq")
+
+[node name="Glass2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.181727, 4.252157, 0.17956841)
+use_collision = true
+size = Vector3(3.1571198, 0.61659026, 2.21052)
+material = ExtResource("2_kvvkh")
+
+[node name="Glass3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.445861, 2.984918, 0.17956841)
+use_collision = true
+size = Vector3(0.62885284, 3.1510687, 2.21052)
 material = ExtResource("2_kvvkh")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -31,17 +62,33 @@ size = Vector3(13.8498535, 1, 2.1633987)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.128845, 1.071249, -0.10506058)
 size = Vector3(1.0484619, 7.3436184, 2.1633987)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.22757, 4.3377566, -0.10506058)
-size = Vector3(11.245911, 0.81060314, 2.1633987)
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.437262, 4.3377566, -0.10506058)
+size = Vector3(3.0714874, 0.81060314, 2.1633987)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.796703, 5.826719, -0.10506058)
-size = Vector3(0.63910675, 3.7885273, 2.1633987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.796703, 5.7548294, -0.10506058)
+size = Vector3(0.63910675, 3.9323063, 2.1633987)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.519167, 11.637926, -0.10506058)
 size = Vector3(0.63910675, 8.667103, 2.1633987)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.75458, 9.799046, -0.10506058)
+size = Vector3(0.63910675, 12.344862, 2.1633987)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.557938, 4.104082, -0.10506058)
+size = Vector3(6.245823, 0.7004733, 2.1633987)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.891735, 1.4841976, -0.10506058)
+size = Vector3(4.780633, 0.7004733, 2.1633987)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.891735, 1.4841976, -0.10506058)
+size = Vector3(4.780633, 0.7004733, 2.1633987)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.519167, 4.6202445, -0.10506058)
@@ -55,6 +102,10 @@ size = Vector3(1.0484619, 19.062103, 2.1633987)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 6.9851027, -1.0927901)
 size = Vector3(24.178345, 19.171326, 0.8215723)
 
+[node name="ceiling" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 13.156827, 0.09408486)
+size = Vector3(24.178345, 0.50138855, 3.1953223)
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4541245, 0.6420984, 0.01159668)
 size = Vector3(4.8125, 0.5698242, 1.7312012)
@@ -64,6 +115,9 @@ transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11
 
 [node name="Canon2" parent="." instance=ExtResource("3_aaqj5")]
 transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11826531, -1.5477057, 4.1773787, -0.3114488)
+
+[node name="Canon3" parent="." instance=ExtResource("3_aaqj5")]
+transform = Transform3D(0.009371587, -0.9968555, -0.07868594, 0.11789342, 0.07924206, -0.9898596, 0.99298203, 0, 0.11826531, -11.368438, 1.8337779, -0.3114488)
 
 [node name="Flipper" parent="." instance=ExtResource("4_0fm5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7368279, -1.2675052, -0.040365458)
