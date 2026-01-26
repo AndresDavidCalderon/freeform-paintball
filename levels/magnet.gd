@@ -8,7 +8,8 @@ extends Node3D
 @export var disabled_material:StandardMaterial3D
 
 func _ready() -> void:
-	Interactive.tried_to_pick.connect(on_tried_to_pick)
+	if not Engine.is_editor_hint():
+		Interactive.tried_to_pick.connect(on_tried_to_pick)
 
 func _physics_process(delta: float) -> void:
 	if enabled and not Engine.is_editor_hint():
