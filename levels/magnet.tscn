@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://denj1dug06ftm"]
+
+[ext_resource type="Script" uid="uid://v1q3xrv3dcle" path="res://levels/magnet.gd" id="1_s3y5y"]
+[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/on_material.tres" id="2_0xrje"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpuyl"]
+albedo_color = Color(1, 0.29000002, 0.29000002, 0.6627451)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6uckl"]
+radius = 7.788933
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s3y5y"]
+radius = 1.0008909
+
+[node name="Magnet" type="Node3D"]
+script = ExtResource("1_s3y5y")
+force = 1
+enabled_material = ExtResource("2_0xrje")
+disabled_material = SubResource("StandardMaterial3D_cpuyl")
+
+[node name="InfluenceArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InfluenceArea"]
+shape = SubResource("SphereShape3D_6uckl")
+
+[node name="Shape" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.29877472, -0.13325214, 0)
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+inner_radius = 0.17651565
+outer_radius = 0.44720948
+material = SubResource("StandardMaterial3D_cpuyl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Shape"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022518158, 1.997229e-08, 0.21020865)
+operation = 2
+size = Vector3(1.0398483, 1, 0.5065918)
+
+[node name="Pickable" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2548623, 0, 0)
+shape = SubResource("SphereShape3D_s3y5y")

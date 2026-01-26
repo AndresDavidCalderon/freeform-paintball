@@ -14,8 +14,8 @@ ray = ExtResource("3_j3oc2")
 transform = Transform3D(0.9999564, -0.009316362, 0.00025856838, 1.1465282e-09, 0.027743563, 0.9996152, -0.009319963, -0.99957186, 0.027742345, 0.050958812, 0, -0.45711517)
 material_override = ExtResource("2_whpgv")
 use_collision = true
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 radius = 0.24609375
 height = 1.2387695
 

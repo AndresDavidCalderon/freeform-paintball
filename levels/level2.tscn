@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tdcjnajcr5c1"]
+[gd_scene load_steps=6 format=3 uid="uid://tdcjnajcr5c1"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_raxm7"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="2_p1d34"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="3_qyb5k"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="4_py88r"]
+[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="5_g1dg4"]
 
 [node name="World" type="Node3D"]
 
@@ -131,6 +132,11 @@ text = "Click on a canon to select it"
 font_size = 16
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_py88r")]
+
+[node name="Glass" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1250153, 3.2191567, -12.146118)
+size = Vector3(20.722565, 1, 39.79419)
+material = ExtResource("5_g1dg4")
 
 [editable path="Ball"]
 [editable path="WinArea"]

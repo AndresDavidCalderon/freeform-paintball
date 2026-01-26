@@ -15,12 +15,12 @@ func _ready() -> void:
 func set_on(new_on):
 	on=new_on
 	if on:
-		collision_layer=5
-		collision_mask=5
-		material=on_material
-	else:
 		collision_layer=7
 		collision_mask=7
+		material=on_material
+	else:
+		collision_layer=2
+		collision_mask=2
 		material=off_material
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==self:

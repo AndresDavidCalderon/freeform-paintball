@@ -7,7 +7,7 @@ transparency = 1
 albedo_color = Color(1, 1, 0.16470589, 0.5921569)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
-size = Vector3(4.637329, 1.835083, 2.7928467)
+size = Vector3(2.372589, 1.835083, 2.7928467)
 
 [node name="WinArea" type="Area3D"]
 script = ExtResource("1_rbyyk")

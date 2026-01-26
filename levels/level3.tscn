@@ -1,19 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgu87ok8xd3i5"]
+[gd_scene load_steps=12 format=3 uid="uid://bgu87ok8xd3i5"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_r8unp"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="2_kvvkh"]
 [ext_resource type="Script" uid="uid://ff8n24t8x86o" path="res://blocks/temporal.gd" id="3_1xfnq"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="3_aaqj5"]
+[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/on_material.tres" id="3_kkm8t"]
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="4_0fm5q"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_cpie4"]
+[ext_resource type="Material" uid="uid://dnmoep357cuqw" path="res://blocks/off_material.tres" id="5_cpuyl"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="6_udvx3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udvx3"]
-albedo_color = Color(0.45566672, 1, 0.29000002, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xfnq"]
-transparency = 1
-albedo_color = Color(1, 0.29000002, 0.29000002, 0.6627451)
+[ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_6uckl"]
+[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="11_cpuyl"]
 
 [node name="Level3" type="Node3D"]
 
@@ -32,10 +29,10 @@ use_collision = true
 collision_layer = 7
 collision_mask = 7
 size = Vector3(4.331398, 0.81060314, 2.1633987)
-material = SubResource("StandardMaterial3D_udvx3")
+material = ExtResource("3_kkm8t")
 script = ExtResource("3_1xfnq")
-on_material = SubResource("StandardMaterial3D_udvx3")
-off_material = SubResource("StandardMaterial3D_1xfnq")
+on_material = ExtResource("3_kkm8t")
+off_material = ExtResource("5_cpuyl")
 
 [node name="Glass2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.181727, 4.252157, 0.17956841)
@@ -82,25 +79,25 @@ size = Vector3(0.63910675, 12.344862, 2.1633987)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.557938, 4.104082, -0.10506058)
 size = Vector3(6.245823, 0.7004733, 2.1633987)
 
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.254402, 2.898097, -0.10506058)
+size = Vector3(0.8528919, 3.1124437, 2.1633987)
+
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.891735, 1.4841976, -0.10506058)
 size = Vector3(4.780633, 0.7004733, 2.1633987)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.891735, 1.4841976, -0.10506058)
-size = Vector3(4.780633, 0.7004733, 2.1633987)
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.519167, 4.6202445, -0.10506058)
-size = Vector3(0.63910675, 1.596097, 2.1633987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.078247, 1.4841976, -0.10506058)
+size = Vector3(11.153654, 0.7004733, 2.1633987)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.543624, 6.9304914, -0.10506058)
 size = Vector3(1.0484619, 19.062103, 2.1633987)
 
 [node name="Back" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 6.9851027, -1.0927901)
-size = Vector3(24.178345, 19.171326, 0.8215723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8541565, 6.9851027, -1.0927901)
+size = Vector3(30.101868, 19.171326, 0.8215723)
 
 [node name="ceiling" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 13.156827, 0.09408486)
@@ -117,10 +114,13 @@ transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11
 transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11826531, -1.5477057, 4.1773787, -0.3114488)
 
 [node name="Canon3" parent="." instance=ExtResource("3_aaqj5")]
-transform = Transform3D(0.009371587, -0.9968555, -0.07868594, 0.11789342, 0.07924206, -0.9898596, 0.99298203, 0, 0.11826531, -11.368438, 1.8337779, -0.3114488)
+transform = Transform3D(0.009371587, -0.9968555, -0.07868594, 0.11789342, 0.07924206, -0.9898596, 0.99298203, 0, 0.11826531, -11.368438, 2.265818, -0.3114488)
 
 [node name="Flipper" parent="." instance=ExtResource("4_0fm5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7368279, -1.2675052, -0.040365458)
+
+[node name="Flipper2" parent="." instance=ExtResource("4_0fm5q")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -14.650214, 2.079432, -0.040365458)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.84082186, 0.4148208, 0.34776765, -0.541312, 0.64434266, 0.5401888, 0, -0.6424533, 0.7663248, 0, 0, 8.705673)
@@ -141,3 +141,24 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -9.9
 
 [node name="Spring4" parent="." instance=ExtResource("6_udvx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8814192, 0.9849732, 0.14786148)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.734287, 2.5938704, 0.062057495)
+
+[node name="WinArea" parent="." instance=ExtResource("8_6uckl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.038397, 2.3177319, -0.23895884)
+
+[node name="CSGBox3D" parent="WinArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0166626, 0.41168213, 0.39068604)
+size = Vector3(2.8187256, 1.8233643, 1.7813721)
+
+[node name="CollisionShape3D" parent="WinArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.273819, 0.4175415, 0.2607422)
+
+[node name="Magnet" parent="." instance=ExtResource("11_cpuyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.078573, 3.4592085, 0)
+
+[node name="Magnet2" parent="." instance=ExtResource("11_cpuyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.470231, 8.069973, 0)
+
+[editable path="WinArea"]
