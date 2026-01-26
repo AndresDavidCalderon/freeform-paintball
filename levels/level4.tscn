@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cttk36aq1t4lf"]
+[gd_scene load_steps=8 format=3 uid="uid://cttk36aq1t4lf"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_rxes3"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="2_cqjvr"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="3_3cb6x"]
 [ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="4_lpgdq"]
+[ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="5_1jw75"]
+[ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="6_8s3b3"]
+[ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="7_cc5tm"]
 
 [node name="Level4" type="Node3D"]
 
@@ -12,9 +15,9 @@
 [node name="CanvasLayer" parent="." instance=ExtResource("2_cqjvr")]
 
 [node name="Glass" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6375732, 8.605385, 1.2057786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.446014, 8.605385, 1.2057786)
 use_collision = true
-size = Vector3(16.92456, 21.726212, 1)
+size = Vector3(28.541443, 21.726212, 1)
 material = ExtResource("3_3cb6x")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -23,12 +26,40 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6375732, 8.605385, -1.1854281)
-size = Vector3(16.92456, 21.726212, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.667755, 8.605385, -1.1854281)
+size = Vector3(28.984924, 21.726212, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6375732, -1.9377403, -0.4304843)
 size = Vector3(16.92456, 0.63996124, 2.5098877)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.396536, 8.313473, -0.4304843)
+size = Vector3(4.480652, 0.63996124, 2.5098877)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.207182, 4.3790197, -0.4642501)
+size = Vector3(1.4929657, 8.508867, 2.5098877)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.039093, 5.216386, -0.4304843)
+size = Vector3(1.7759247, 0.63996124, 2.5098877)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.492924, -2.5633197, -0.4304843)
+size = Vector3(12.059027, 0.63996124, 2.5098877)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.597054, -0.91227484, -0.4304843)
+size = Vector3(1.2676449, 3.942051, 2.5098877)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.55104, 2.5882835, -0.4304843)
+size = Vector3(0.88544273, 4.920918, 2.5098877)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.572113, 3.1634202, -0.4304843)
+size = Vector3(0.88544273, 11.869023, 2.5098877)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.49054, -0.84524107, -0.4304843)
@@ -48,8 +79,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0699816, 2.949424, 0)
 [node name="Magnet3" parent="." instance=ExtResource("4_lpgdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3114376, 3.0199606, 0)
 
+[node name="Magnet12" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.141352, 4.394931, 0)
+
+[node name="Magnet9" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.357897, 6.92754, 0)
+
+[node name="Magnet10" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.789946, 8.851189, -0.003674686)
+
+[node name="Magnet11" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.512259, 8.8593445, 0)
+
+[node name="Magnet4" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.616583, 5.423812, 0)
+
+[node name="Magnet5" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.616583, 6.423812, 0)
+
+[node name="Magnet6" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.350492, 10.470066, 0)
+
+[node name="Magnet7" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.420524, 10.542341, 0)
+
+[node name="Magnet13" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.570507, 5.14966, 0)
+
+[node name="Magnet14" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.549137, 5.129941, 0.0010050833)
+
+[node name="Magnet8" parent="." instance=ExtResource("4_lpgdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.488993, 10.616093, 0)
+
 [node name="Magnet2" parent="." instance=ExtResource("4_lpgdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.278618, 2.949424, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.92132795, -0.22177416, -0.319329, 0.38878638, 0.52555037, 0.7567314, 0, -0.82134855, 0.570427, 0, 0, 5.341049)
+
+[node name="Temporal" parent="." instance=ExtResource("5_1jw75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.704994, 0.47896424, 0.39627147)
+size = Vector3(3.5945072, 0.81060314, 2.1633987)
+
+[node name="Canon" parent="." instance=ExtResource("6_8s3b3")]
+transform = Transform3D(-0.08503436, 0, -0.996378, 0, 1, 0, 0.996378, 0, -0.08503436, 15.830172, 4.0230856, 0.4211855)
+
+[node name="Canon2" parent="." instance=ExtResource("6_8s3b3")]
+transform = Transform3D(-0.08503436, 0, -0.996378, 0, 1, 0, 0.996378, 0, -0.08503436, 12.288537, 0.154984, 0.4211855)
+
+[node name="WinArea" parent="." instance=ExtResource("7_cc5tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.464361, -1.7433386, -0.30640662)

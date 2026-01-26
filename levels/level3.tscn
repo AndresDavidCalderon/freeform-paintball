@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgu87ok8xd3i5"]
+[gd_scene load_steps=10 format=3 uid="uid://bgu87ok8xd3i5"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_r8unp"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="2_kvvkh"]
-[ext_resource type="Script" uid="uid://ff8n24t8x86o" path="res://blocks/temporal.gd" id="3_1xfnq"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="3_aaqj5"]
-[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/on_material.tres" id="3_kkm8t"]
+[ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="3_d6jip"]
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="4_0fm5q"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_cpie4"]
-[ext_resource type="Material" uid="uid://dnmoep357cuqw" path="res://blocks/off_material.tres" id="5_cpuyl"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="6_udvx3"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_6uckl"]
 [ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="11_cpuyl"]
@@ -23,16 +21,8 @@ use_collision = true
 size = Vector3(30.246643, 27.002163, 0.8215723)
 material = ExtResource("2_kvvkh")
 
-[node name="Temporal" type="CSGBox3D" parent="."]
+[node name="Temporal" parent="." instance=ExtResource("3_d6jip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.259338, 4.3377566, -0.10506058)
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(4.331398, 0.81060314, 2.1633987)
-material = ExtResource("3_kkm8t")
-script = ExtResource("3_1xfnq")
-on_material = ExtResource("3_kkm8t")
-off_material = ExtResource("5_cpuyl")
 
 [node name="Glass2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.181727, 4.252157, 0.17956841)

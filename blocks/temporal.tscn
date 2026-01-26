@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch7day8njayyb"]
+
+[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/on_material.tres" id="1_yx2hw"]
+[ext_resource type="Script" uid="uid://ff8n24t8x86o" path="res://blocks/temporal.gd" id="2_75c5g"]
+[ext_resource type="Material" uid="uid://dnmoep357cuqw" path="res://blocks/off_material.tres" id="3_2lyio"]
+
+[node name="Temporal" type="CSGBox3D"]
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(4.331398, 0.81060314, 2.1633987)
+material = ExtResource("1_yx2hw")
+script = ExtResource("2_75c5g")
+on_material = ExtResource("1_yx2hw")
+off_material = ExtResource("3_2lyio")

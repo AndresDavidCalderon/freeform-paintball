@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://di5u28nkvltvt"]
+
+[ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_23uhd"]
+
+[node name="Level5" type="Node3D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_23uhd")]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.162384, -1.4500865, 0.076049805)
+size = Vector3(15.5355835, 1, 1.7702637)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.124611, -1.4500865, 0.076049805)
+size = Vector3(3.500229, 1, 1.7702637)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4362793, 2.7501392, -1.1593323)
+size = Vector3(20.987793, 9.400452, 1.024353)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.9170461, 0.39878106, 0, -0.39878106, 0.9170461, 0, 0, 0, 1, -5.067575, 0.5638503, 0.076049805)
+size = Vector3(10.887329, 1, 1.7702637)
