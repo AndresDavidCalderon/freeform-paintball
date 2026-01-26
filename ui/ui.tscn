@@ -78,3 +78,4 @@ text = "Restart"
 
 [connection signal="pressed" from="WinDialogue/Button" to="WinDialogue" method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Restart" to="Pause" method="_on_restart_pressed"]
