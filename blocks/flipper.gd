@@ -4,15 +4,11 @@ extends Node3D
 @export var force_multiplier:float=1
 @export var bumped:bool=false
 
-var reset:=false
-var original_transform:Transform3D
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Interactive.tried_to_pick.connect(on_tried_to_pick)
 	$FlipperBody.add_collision_exception_with($FlipperHolder)
 	$FlipperHolder.add_collision_exception_with($FlipperBody)
-	original_transform=Transform3D(transform)
 
 func _physics_process(delta: float) -> void:
 	if bumped:
@@ -21,13 +17,3 @@ func _physics_process(delta: float) -> void:
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==$FlipperBody:
 		$AnimationPlayer.play("bump")
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	reset=true
-
-	
-func _integrate_forces(state):
-	if reset:
-		state.transform = original_transform
-		reset = false

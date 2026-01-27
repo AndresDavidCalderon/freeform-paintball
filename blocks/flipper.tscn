@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfuii8yqcv43f"]
+[gd_scene load_steps=9 format=3 uid="uid://bfuii8yqcv43f"]
 
 [ext_resource type="Script" uid="uid://be1jxp5je2ue5" path="res://blocks/flipper.gd" id="1_wvv0j"]
+[ext_resource type="Script" uid="uid://55qrxg1chlnh" path="res://blocks/flipper_body.gd" id="2_14qvk"]
 [ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/interactive_material.tres" id="2_ie8ar"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
@@ -80,6 +81,7 @@ force = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5370083, 0.010429978, 0)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("2_14qvk")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="FlipperBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0897505, -0.088012695, 0)
@@ -126,4 +128,4 @@ libraries = {
 }
 
 [connection signal="input_event" from="FlipperBody" to="." method="_on_flipper_body_input_event"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="FlipperBody" method="_on_animation_player_animation_finished"]
