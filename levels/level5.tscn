@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://di5u28nkvltvt"]
+[gd_scene load_steps=15 format=3 uid="uid://di5u28nkvltvt"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_23uhd"]
 [ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="2_8mh55"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c8ef5781mmpk0" path="res://blocks/water.gd" id="7_ldkys"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_dm5g0"]
 [ext_resource type="Script" uid="uid://cl7f8efvtlba4" path="res://blocks/camera_set.gd" id="9_vp6pq"]
+[ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="10_66nwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dsjn"]
 transparency = 1
@@ -19,6 +20,9 @@ size = Vector3(1, 5.44104, 12.613998)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm5g0"]
 size = Vector3(25.59668, 9.509277, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vp6pq"]
+size = Vector3(21.553535, 12.606689, 1)
 
 [node name="Level5" type="Node3D"]
 
@@ -54,11 +58,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.626694, 4.532778, -10.6975
 size = Vector3(0.46499634, 12.965729, 20.100815)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.422127, 4.532778, -20.603382)
-size = Vector3(2.0558624, 12.965729, 0.28917694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.422127, 4.532778, -23.030111)
+size = Vector3(2.0558624, 12.965729, 5.1426353)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.059139, -1.7745342, -9.718273)
+size = Vector3(5.0787125, 0.35110474, 21.445732)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.059139, 10.613969, -9.718273)
 size = Vector3(5.0787125, 0.35110474, 21.445732)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -80,11 +88,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.544136, 4.3906746, -0.0092
 [node name="Magnet4" parent="." instance=ExtResource("2_8mh55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.350219, 5.1120787, -0.009270191)
 
+[node name="Magnet7" parent="." instance=ExtResource("2_8mh55")]
+transform = Transform3D(0.05310285, 0, 0.99858904, 0, 1, 0, -0.99858904, 0, 0.05310285, 15.5132265, 10.048285, -4.204495)
+
+[node name="Magnet8" parent="." instance=ExtResource("2_8mh55")]
+transform = Transform3D(0.05310285, 0, 0.99858904, 0, 1, 0, -0.99858904, 0, 0.05310285, 15.663006, 4.58683, -7.0210686)
+
+[node name="Magnet9" parent="." instance=ExtResource("2_8mh55")]
+transform = Transform3D(0.05310285, 0, 0.99858904, 0, 1, 0, -0.99858904, 0, 0.05310285, 15.721427, 6.662478, -8.119666)
+
+[node name="Magnet10" parent="." instance=ExtResource("2_8mh55")]
+transform = Transform3D(0.05310285, 0, 0.99858904, 0, 1, 0, -0.99858904, 0, 0.05310285, 15.570152, 10.058151, -5.274968)
+
 [node name="Magnet5" parent="." instance=ExtResource("2_8mh55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.778573, 5.351786, -0.009270191)
 
 [node name="Canon" parent="." instance=ExtResource("3_hydfx")]
 transform = Transform3D(0.0012566466, 0, -0.9999993, 0, 1, 0, 0.9999993, 0, 0.0012566466, 8.688651, -0.06530543, -0.011854172)
+
+[node name="Canon4" parent="." instance=ExtResource("3_hydfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.457064, 4.962213, -13.851351)
+
+[node name="Canon3" parent="." instance=ExtResource("3_hydfx")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 15.240097, 8.995922, -1.6547995)
 
 [node name="Canon2" parent="." instance=ExtResource("3_hydfx")]
 transform = Transform3D(0.0012566466, 0, -0.9999993, 0, 1, 0, 0.9999993, 0, 0.0012566466, -9.259885, 3.8002198, -0.011854172)
@@ -117,6 +143,9 @@ material = ExtResource("4_s216a")
 
 [node name="Spring" parent="." instance=ExtResource("5_bufqw")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 15.594599, -0.5586606, 0.70104957)
+
+[node name="Spring2" parent="." instance=ExtResource("5_bufqw")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 15.5946, -0.5586615, -20.298084)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8790502, 0.32051843, 0.35290042, -0.47672924, 0.5910101, 0.6507198, 0, -0.7402533, 0.67232805, 0, 0, 12.553915)
@@ -153,5 +182,19 @@ script = ExtResource("9_vp6pq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraSet"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.089355, -0.9362793, 0)
 shape = SubResource("BoxShape3D_dm5g0")
+
+[node name="CameraSet2" type="Area3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.096607, 3.7769628, 0)
+script = ExtResource("9_vp6pq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraSet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.884075, 0.61242676, 0)
+shape = SubResource("BoxShape3D_vp6pq")
+
+[node name="Temporal" parent="." instance=ExtResource("10_66nwl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.254515, 7.8430047, -10.860701)
+
+[node name="Temporal2" parent="." instance=ExtResource("10_66nwl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.254515, 6.8718457, -15.400097)
 
 [editable path="WinArea"]

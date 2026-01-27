@@ -10,4 +10,6 @@ func _process(delta: float) -> void:
 	pass
 
 func on_body_entered(body):
-	if body.is_in_group("balls")
+	if body.is_in_group("balls"):
+		var stabilizer=body.get_node("CameraStabilizer/CameraPaner")
+		stabilizer.gently_set_base_rotation(rotation)
