@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_cpie4"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="6_udvx3"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_6uckl"]
-[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="11_cpuyl"]
+[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="11_cpuyl"]
 
 [node name="Level3" type="Node3D"]
 

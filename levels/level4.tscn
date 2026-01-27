@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_rxes3"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="2_cqjvr"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="3_3cb6x"]
-[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="4_lpgdq"]
+[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="4_lpgdq"]
 [ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="5_1jw75"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="6_8s3b3"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="7_cc5tm"]

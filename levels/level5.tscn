@@ -1,11 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://di5u28nkvltvt"]
+[gd_scene load_steps=13 format=3 uid="uid://di5u28nkvltvt"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_23uhd"]
-[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://levels/magnet.tscn" id="2_8mh55"]
+[ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="2_8mh55"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="3_hydfx"]
 [ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="4_s216a"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="5_bufqw"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="6_0dsjn"]
+[ext_resource type="Script" uid="uid://c8ef5781mmpk0" path="res://blocks/water.gd" id="7_ldkys"]
+[ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_dm5g0"]
+[ext_resource type="Script" uid="uid://cl7f8efvtlba4" path="res://blocks/camera_set.gd" id="9_vp6pq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dsjn"]
+transparency = 1
+albedo_color = Color(0.39, 0.41033328, 1, 0.3137255)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dsjn"]
+size = Vector3(1, 5.44104, 12.613998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dm5g0"]
+size = Vector3(25.59668, 9.509277, 1)
 
 [node name="Level5" type="Node3D"]
 
@@ -37,12 +50,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.301193, 2.7501392, -0.397
 size = Vector3(1.2579651, 9.400452, 2.5484314)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.626694, 2.7501392, -7.3402557)
-size = Vector3(0.46499634, 9.400452, 13.3862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.626694, 4.532778, -10.697563)
+size = Vector3(0.46499634, 12.965729, 20.100815)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.422127, 4.532778, -20.603382)
+size = Vector3(2.0558624, 12.965729, 0.28917694)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.059139, -1.7745342, -6.5143814)
-size = Vector3(5.0787125, 0.35110474, 15.037949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.059139, -1.7745342, -9.718273)
+size = Vector3(5.0787125, 0.35110474, 21.445732)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.9170461, 0.39878106, 0, -0.39878106, 0.9170461, 0, 0, 0, 1, -5.067575, 0.5638503, 0.076049805)
@@ -93,9 +110,9 @@ size = Vector3(26.795044, 8.675842, 0.4633789)
 material = ExtResource("4_s216a")
 
 [node name="Glass2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.423012, 2.5127869, -6.3634806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.423012, 4.556473, -9.727723)
 use_collision = true
-size = Vector3(0.3075409, 8.675842, 15.07135)
+size = Vector3(0.3075409, 12.763214, 21.799835)
 material = ExtResource("4_s216a")
 
 [node name="Spring" parent="." instance=ExtResource("5_bufqw")]
@@ -105,3 +122,36 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4
 transform = Transform3D(0.8790502, 0.32051843, 0.35290042, -0.47672924, 0.5910101, 0.6507198, 0, -0.7402533, 0.67232805, 0, 0, 12.553915)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_0dsjn")]
+
+[node name="Water" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.15572, 3.5549588, -6.241191)
+script = ExtResource("7_ldkys")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6676636, 0.9171982, -4.529114)
+size = Vector3(1.8814697, 12.346115, 18.971313)
+material = SubResource("StandardMaterial3D_0dsjn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5629082, -1.381813)
+shape = SubResource("BoxShape3D_0dsjn")
+
+[node name="WinArea" parent="." instance=ExtResource("8_dm5g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.602331, 9.059983, -19.00578)
+
+[node name="CSGBox3D" parent="WinArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0071411, -0.006011963, 0.42549133)
+size = Vector3(1.3460693, 2.6587524, 2.9182434)
+
+[node name="CollisionShape3D" parent="WinArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99932957, 0.002532959, 0.37161255)
+
+[node name="CameraSet" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.700029, 3.7769628, 0)
+script = ExtResource("9_vp6pq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraSet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.089355, -0.9362793, 0)
+shape = SubResource("BoxShape3D_dm5g0")
+
+[editable path="WinArea"]
