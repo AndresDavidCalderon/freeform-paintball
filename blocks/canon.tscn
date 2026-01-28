@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmgfqikxwiofd" path="res://blocks/canon.gd" id="1_vf83r"]
 [ext_resource type="PackedScene" uid="uid://rii3xftgqrml" path="res://blocks/effects/explosion.tscn" id="2_j3oc2"]
-[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/interactive_material.tres" id="2_whpgv"]
+[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/materials/interactive_material.tres" id="2_whpgv"]
 [ext_resource type="PackedScene" uid="uid://bmmc73d7808qm" path="res://blocks/effects/ray.tscn" id="3_j3oc2"]
 
 [node name="Canon" type="Node3D"]

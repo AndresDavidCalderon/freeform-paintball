@@ -1,7 +1,5 @@
-extends CSGCylinder3D
-signal activated
+extends Node3D
 
-@export var force=2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,10 +9,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
- 
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("balls") and body is RigidBody3D:
-		body.apply_impulse(global_transform.basis.y*force)
-		activated.emit()
+func _on_spring_activated() -> void:
+	$Springs.hide()
+
+
+func _on_magnet_2_switched(on: bool) -> void:
+	if on:
+		$Magnets.hide()
+
+
+func _on_temporal_switched(on: bool) -> void:
+	if not on:
+		$Platforms.hide()

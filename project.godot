@@ -55,3 +55,8 @@ pause={
 
 3d_physics/layer_2="pickable"
 3d_physics/layer_3="shootable"
+3d_physics/layer_4="bullet_taker"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.06666667, 0.06666667, 0.105882354, 1)

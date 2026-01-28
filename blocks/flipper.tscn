@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be1jxp5je2ue5" path="res://blocks/flipper.gd" id="1_wvv0j"]
 [ext_resource type="Script" uid="uid://55qrxg1chlnh" path="res://blocks/flipper_body.gd" id="2_14qvk"]
-[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/interactive_material.tres" id="2_ie8ar"]
+[ext_resource type="Material" uid="uid://bu63843xg54bb" path="res://blocks/materials/interactive_material.tres" id="2_ie8ar"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sjb42"]
 size = Vector3(2.7704468, 0.25497437, 1)

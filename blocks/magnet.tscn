@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://denj1dug06ftm"]
 
 [ext_resource type="Script" uid="uid://v1q3xrv3dcle" path="res://blocks/magnet.gd" id="1_s3y5y"]
-[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/on_material.tres" id="2_0xrje"]
+[ext_resource type="Material" uid="uid://dotf60nvodg15" path="res://blocks/materials/on_material.tres" id="2_0xrje"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpuyl"]
 albedo_color = Color(1, 0.29000002, 0.29000002, 0.6627451)

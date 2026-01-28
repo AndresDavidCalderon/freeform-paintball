@@ -1,6 +1,8 @@
 @tool
 extends CSGBox3D
 
+signal switched(on:bool)
+
 @export var on_material:StandardMaterial3D
 @export var off_material:StandardMaterial3D
 
@@ -23,6 +25,7 @@ func set_on(new_on):
 		collision_layer=2
 		collision_mask=2
 		material=off_material
+	switched.emit(on)
 
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==self:

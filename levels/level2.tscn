@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://tdcjnajcr5c1"]
+[gd_scene load_steps=10 format=3 uid="uid://tdcjnajcr5c1"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_raxm7"]
+[ext_resource type="Material" uid="uid://cqpjagcn842gl" path="res://blocks/materials/default_material.tres" id="1_s1bpp"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="2_p1d34"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="3_qyb5k"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="4_py88r"]
-[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="5_g1dg4"]
+[ext_resource type="FontFile" uid="uid://b1dle6tl5tlu7" path="res://ui/OpenSans-VariableFont_wdth,wght.ttf" id="5_76ugp"]
+[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/materials/glass..tres" id="5_g1dg4"]
+[ext_resource type="Script" uid="uid://djhabufaeb2t4" path="res://blocks/instructions_l2.gd" id="6_e8p81"]
+
+[sub_resource type="FontVariation" id="FontVariation_e8p81"]
+base_font = ExtResource("5_76ugp")
+variation_opentype = {
+2003072104: 100,
+2003265652: 300
+}
 
 [node name="World" type="Node3D"]
 
@@ -14,12 +24,13 @@ use_collision = true
 collision_layer = 5
 collision_mask = 5
 size = Vector3(26.3275, 1, 45.1816)
+material = ExtResource("1_s1bpp")
 
 [node name="Ball" parent="." instance=ExtResource("1_raxm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
 
 [node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.540302, 0.8414705, 0, -0.8414705, 0.540302, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.57740736, 0.7832025, 0, -0.8992601, 0.50288934, 0, 0, 0)
 vertical = -1
 
 [node name="Canon" parent="." instance=ExtResource("2_p1d34")]
@@ -46,56 +57,67 @@ collision_mask = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67663574, 1.0515137, 5.8247223)
 use_collision = true
 size = Vector3(13.960205, 3.1030273, 1)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.252777, 1.0515137, -1.1218109)
 use_collision = true
 size = Vector3(0.80792236, 3.1030273, 14.893066)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.147502, 1.3151245, -27.846058)
 use_collision = true
 size = Vector3(17.17783, 3.4291382, 1.3835316)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.976248, 1.2381234, -17.667929)
 use_collision = true
 size = Vector3(0.94179153, 3.4291382, 18.937054)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82656336, 1.6640549, -13.806259)
 use_collision = true
 size = Vector3(5.4997044, 3.1920013, 1.3558083)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6644611, 1.7090759, -14.673155)
 use_collision = true
 size = Vector3(0.94179153, 3.4291382, 11.637669)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0484915, 1.1651173, -7.8750877)
 use_collision = true
 size = Vector3(7.9033966, 3.1030273, 0.86024475)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Walls/CSGBox3D9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.58761, 0.7147999, -13.527733)
 use_collision = true
 size = Vector3(0.8166599, 2.2023926, 14.406101)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Walls/CSGBox3D9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.58761, 0.7147999, -13.527733)
 use_collision = true
 size = Vector3(0.8166599, 2.2023926, 14.406101)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2990007, 2.1030273, -8.881865)
 use_collision = true
 size = Vector3(8.219879, 3.1030273, 0.86024475)
+material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.897524, 1.0515137, -1.1218109)
 use_collision = true
 size = Vector3(0.80792236, 3.1030273, 14.893066)
+material = ExtResource("1_s1bpp")
 
 [node name="Canon5" parent="." instance=ExtResource("2_p1d34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998583, 0.8918989, -12.93597)
@@ -123,20 +145,35 @@ size = Vector3(4.9035034, 1.8233643, 2.604065)
 [node name="CollisionShape3D" parent="WinArea" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15472412, 0.4175415, 0.6395874)
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.359104, 2.8980134, -0.07571888)
-billboard = 1
-no_depth_test = true
-fixed_size = true
-text = "Click on a canon to select it"
-font_size = 16
-
 [node name="CanvasLayer" parent="." instance=ExtResource("4_py88r")]
 
 [node name="Glass" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1250153, 3.2191567, -12.146118)
 size = Vector3(20.722565, 1, 39.79419)
 material = ExtResource("5_g1dg4")
+
+[node name="Instructions" type="Node3D" parent="."]
+script = ExtResource("6_e8p81")
+
+[node name="SelectCanon" type="Label3D" parent="Instructions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.359104, 2.8980134, -0.07571888)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "Click on a canon to select it"
+font = SubResource("FontVariation_e8p81")
+font_size = 16
+outline_size = 2
+
+[node name="ShootBall" type="Label3D" parent="Instructions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.359104, 2.8980134, 2.370276)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "Click on the ball to shoot at it"
+font = SubResource("FontVariation_e8p81")
+font_size = 16
+outline_size = 2
 
 [editable path="Ball"]
 [editable path="WinArea"]

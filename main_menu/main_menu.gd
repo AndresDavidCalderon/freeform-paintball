@@ -11,4 +11,4 @@ func _on_play_pressed() -> void:
 
 
 func _on_levels_pressed() -> void:
-	$LevelsList.show()
+	$LevelsList.visible = not $LevelsList.visible

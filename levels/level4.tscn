@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cttk36aq1t4lf"]
+[gd_scene load_steps=9 format=3 uid="uid://cttk36aq1t4lf"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_rxes3"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="2_cqjvr"]
-[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="3_3cb6x"]
+[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/materials/glass..tres" id="3_3cb6x"]
 [ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="4_lpgdq"]
+[ext_resource type="Material" uid="uid://cqpjagcn842gl" path="res://blocks/materials/default_material.tres" id="4_mj76i"]
 [ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="5_1jw75"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="6_8s3b3"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="7_cc5tm"]
@@ -28,50 +29,62 @@ collision_mask = 5
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.667755, 8.605385, -1.1854281)
 size = Vector3(28.984924, 21.726212, 1)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6375732, -1.9377403, -0.4304843)
 size = Vector3(16.92456, 0.63996124, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.396536, 8.313473, -0.4304843)
 size = Vector3(4.480652, 0.63996124, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.207182, 4.3790197, -0.4642501)
 size = Vector3(1.4929657, 8.508867, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.039093, 5.216386, -0.4304843)
 size = Vector3(1.7759247, 0.63996124, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.492924, -2.5633197, -0.4304843)
 size = Vector3(12.059027, 0.63996124, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.597054, -0.91227484, -0.4304843)
 size = Vector3(1.2676449, 3.942051, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.55104, 2.5882835, -0.4304843)
 size = Vector3(0.88544273, 4.920918, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.572113, 3.1634202, -0.4304843)
 size = Vector3(0.88544273, 11.869023, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.49054, -0.84524107, -0.4304843)
 size = Vector3(1.2186279, 2.8249598, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.349617, 0.28475103, -0.4304843)
 size = Vector3(7.500473, 0.930832, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.407093, 6.689492, -0.4304843)
 size = Vector3(1.2186279, 17.894426, 2.5098877)
+material = ExtResource("4_mj76i")
 
 [node name="Magnet" parent="." instance=ExtResource("4_lpgdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0699816, 2.949424, 0)

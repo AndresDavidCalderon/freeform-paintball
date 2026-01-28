@@ -1,6 +1,8 @@
 @tool
 extends Node3D
 
+signal switched(on:bool)
+
 @export var enabled:bool:
 	set=set_enabled
 @export var force=0.1
@@ -23,6 +25,7 @@ func set_enabled(new_enabled):
 		$Shape.material=enabled_material
 	else:
 		$Shape.material=disabled_material
+	switched.emit(enabled)
 
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==$Pickable:

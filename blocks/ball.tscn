@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dnhj31se5bqun" path="res://blocks/camera_holder.gd" id="1_hvtgq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_txtq1"]
-radius = 0.4863152
+radius = 0.50039965
 
 [node name="Ball" type="RigidBody3D" groups=["balls"]]
-collision_layer = 5
+collision_layer = 13
 mass = 0.1
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]

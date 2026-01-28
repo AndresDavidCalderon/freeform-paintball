@@ -3,6 +3,7 @@ extends Node3D
 var selected
 
 signal tried_to_pick(intersection)
+signal selected_changed(old,new)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("activate_lever"):
@@ -23,4 +24,6 @@ func set_selected(new):
 	if selected!=null:
 		selected.unselected()
 	new.selected()
+	var old=selected
 	selected=new
+	selected_changed.emit(old,new)

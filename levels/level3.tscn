@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgu87ok8xd3i5"]
+[gd_scene load_steps=12 format=3 uid="uid://bgu87ok8xd3i5"]
 
 [ext_resource type="PackedScene" uid="uid://cyj0h8c2phxbd" path="res://blocks/ball.tscn" id="1_r8unp"]
-[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/glass..tres" id="2_kvvkh"]
+[ext_resource type="Material" uid="uid://qn0bvahgfht1" path="res://blocks/materials/glass..tres" id="2_kvvkh"]
 [ext_resource type="PackedScene" uid="uid://caall1osnndrl" path="res://blocks/canon.tscn" id="3_aaqj5"]
 [ext_resource type="PackedScene" uid="uid://ch7day8njayyb" path="res://blocks/temporal.tscn" id="3_d6jip"]
 [ext_resource type="PackedScene" uid="uid://bfuii8yqcv43f" path="res://blocks/flipper.tscn" id="4_0fm5q"]
+[ext_resource type="Material" uid="uid://cqpjagcn842gl" path="res://blocks/materials/default_material.tres" id="4_kkm8t"]
 [ext_resource type="PackedScene" uid="uid://c6sbe53kcj23y" path="res://ui/ui.tscn" id="5_cpie4"]
 [ext_resource type="PackedScene" uid="uid://bflbm601mjs27" path="res://blocks/spring.tscn" id="6_udvx3"]
 [ext_resource type="PackedScene" uid="uid://b4fn7muayj7fd" path="res://blocks/win_area.tscn" id="8_6uckl"]
 [ext_resource type="PackedScene" uid="uid://denj1dug06ftm" path="res://blocks/magnet.tscn" id="11_cpuyl"]
+[ext_resource type="Script" uid="uid://gmlrwp043gn5" path="res://levels/instructions_l3.gd" id="11_mf7v1"]
 
 [node name="Level3" type="Node3D"]
 
@@ -44,58 +46,72 @@ collision_mask = 5
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7281494, -2.1005604, -0.10506058)
 size = Vector3(13.8498535, 1, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.128845, 1.071249, -0.10506058)
 size = Vector3(1.0484619, 7.3436184, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.437262, 4.3377566, -0.10506058)
 size = Vector3(3.0714874, 0.81060314, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.796703, 5.7548294, -0.10506058)
 size = Vector3(0.63910675, 3.9323063, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.519167, 11.637926, -0.10506058)
 size = Vector3(0.63910675, 8.667103, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.75458, 9.799046, -0.10506058)
 size = Vector3(0.63910675, 12.344862, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.557938, 4.104082, -0.10506058)
 size = Vector3(6.245823, 0.7004733, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.254402, 2.898097, -0.10506058)
 size = Vector3(0.8528919, 3.1124437, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.891735, 1.4841976, -0.10506058)
 size = Vector3(4.780633, 0.7004733, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.078247, 1.4841976, -0.10506058)
 size = Vector3(11.153654, 0.7004733, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.543624, 6.9304914, -0.10506058)
 size = Vector3(1.0484619, 19.062103, 2.1633987)
+material = ExtResource("4_kkm8t")
 
 [node name="Back" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8541565, 6.9851027, -1.0927901)
 size = Vector3(30.101868, 19.171326, 0.8215723)
+material = ExtResource("4_kkm8t")
 
 [node name="ceiling" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 13.156827, 0.09408486)
 size = Vector3(24.178345, 0.50138855, 3.1953223)
+material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4541245, 0.6420984, 0.01159668)
 size = Vector3(4.8125, 0.5698242, 1.7312012)
+material = ExtResource("4_kkm8t")
 
 [node name="Canon" parent="." instance=ExtResource("3_aaqj5")]
 transform = Transform3D(0.11826531, 0, -0.99298203, 0, 1, 0, 0.99298203, 0, 0.11826531, -6.020925, -0.8849257, -0.3114488)
@@ -158,5 +174,35 @@ use_collision = true
 collision_layer = 4
 collision_mask = 4
 size = Vector3(30.367798, 16.57132, 0.43798828)
+
+[node name="Instructions" type="Node3D" parent="."]
+script = ExtResource("11_mf7v1")
+
+[node name="Springs" type="Label3D" parent="Instructions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.470238, 5.707756, 1.1013355)
+pixel_size = 0.02
+billboard = 1
+no_depth_test = true
+text = "Yellow disks shoot the ball forward 
+when touched"
+
+[node name="Platforms" type="Label3D" parent="Instructions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.713207, 6.1971645, 1.1013355)
+pixel_size = 0.02
+billboard = 1
+no_depth_test = true
+text = "Click on green platforms
+to disable them"
+
+[node name="Magnets" type="Label3D" parent="Instructions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3969913, 10.193855, 1.1013355)
+pixel_size = 0.02
+billboard = 1
+no_depth_test = true
+text = "Click on magnets to enable them"
+
+[connection signal="switched" from="Temporal" to="Instructions" method="_on_temporal_switched"]
+[connection signal="activated" from="Spring" to="Instructions" method="_on_spring_activated"]
+[connection signal="switched" from="Magnet2" to="Instructions" method="_on_magnet_2_switched"]
 
 [editable path="WinArea"]
