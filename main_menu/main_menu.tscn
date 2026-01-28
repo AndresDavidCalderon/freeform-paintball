@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://17w0qg4tdier"]
+[gd_scene load_steps=4 format=3 uid="uid://17w0qg4tdier"]
 
 [ext_resource type="Script" uid="uid://dqynuh45233n2" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Script" uid="uid://bjd2moevywg4w" path="res://main_menu/levels_list.gd" id="2_d3a7t"]
+[ext_resource type="PackedScene" uid="uid://d01noe7sco54o" path="res://main_menu/level_button.tscn" id="3_3shxk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -61,6 +62,7 @@ offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_d3a7t")
+level_button = ExtResource("3_3shxk")
 
 [node name="FlowContainer" type="FlowContainer" parent="LevelsList"]
 layout_mode = 1
@@ -70,9 +72,25 @@ anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 23.0
 offset_right = -24.0
-offset_bottom = -19.0
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Close" type="Button" parent="LevelsList"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -46.0
+offset_right = -19.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Levels" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="LevelsList/Close" to="LevelsList" method="_on_close_pressed"]

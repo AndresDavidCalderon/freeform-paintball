@@ -9,7 +9,8 @@ extends CSGBox3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Interactive.tried_to_pick.connect(on_tried_to_pick)
+	if not Engine.is_editor_hint():
+		Interactive.tried_to_pick.connect(on_tried_to_pick)
 	
 
 func set_on(new_on):
@@ -22,6 +23,7 @@ func set_on(new_on):
 		collision_layer=2
 		collision_mask=2
 		material=off_material
+
 func on_tried_to_pick(intersection):
 	if (not intersection.is_empty()) and intersection["collider"]==self:
 		on=not on
