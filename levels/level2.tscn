@@ -21,8 +21,8 @@ variation_opentype = {
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9189987, 0, -15.347017)
 use_collision = true
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 size = Vector3(26.3275, 1, 45.1816)
 material = ExtResource("1_s1bpp")
 
@@ -30,7 +30,7 @@ material = ExtResource("1_s1bpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
 
 [node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.57740736, 0.7832025, 0, -0.8992601, 0.50288934, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6120073, 0.7358367, 0, -0.95314646, 0.47247604, 0, 0, 0)
 vertical = -1
 
 [node name="Canon" parent="." instance=ExtResource("2_p1d34")]
@@ -50,8 +50,8 @@ transform = Transform3D(-0.4154396, 0, 0.90962076, 0, 1, 0, -0.90962076, 0, -0.4
 
 [node name="Walls" type="CSGCombiner3D" parent="."]
 use_collision = true
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67663574, 1.0515137, 5.8247223)
@@ -174,6 +174,14 @@ text = "Click on the ball to shoot at it"
 font = SubResource("FontVariation_e8p81")
 font_size = 16
 outline_size = 2
+
+[node name="Shootable" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9708862, 0.30615234, -13.313965)
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 4
+size = Vector3(17.46228, 1.6123047, 41.10254)
 
 [editable path="Ball"]
 [editable path="WinArea"]

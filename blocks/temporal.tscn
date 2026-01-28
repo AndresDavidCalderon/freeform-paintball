@@ -6,8 +6,8 @@
 
 [node name="Temporal" type="CSGBox3D"]
 use_collision = true
-collision_layer = 7
-collision_mask = 7
+collision_layer = 15
+collision_mask = 15
 size = Vector3(4.331398, 0.81060314, 2.1633987)
 material = ExtResource("1_yx2hw")
 script = ExtResource("2_75c5g")
