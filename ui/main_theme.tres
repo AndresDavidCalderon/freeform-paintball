@@ -1,7 +1,25 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://gcunsglrtwdc"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://gcunsglrtwdc"]
 
 [ext_resource type="FontFile" uid="uid://b1dle6tl5tlu7" path="res://ui/OpenSans-VariableFont_wdth,wght.ttf" id="1_g1fjd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tukj"]
+bg_color = Color(0.27058825, 0.2784314, 0.3529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5372549, 0.7058824, 0.98039216, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+shadow_color = Color(0.5372549, 0.7058824, 0.98039216, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1fjd"]
+bg_color = Color(0.27058825, 0.2784314, 0.3529412, 1)
 
 [resource]
 default_font = ExtResource("1_g1fjd")
 default_font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_6tukj")
+Button/styles/normal = SubResource("StyleBoxFlat_g1fjd")

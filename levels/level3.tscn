@@ -40,8 +40,8 @@ material = ExtResource("2_kvvkh")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-collision_layer = 13
-collision_mask = 13
+collision_layer = 9
+collision_mask = 9
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7281494, -2.1005604, -0.10506058)
@@ -134,7 +134,7 @@ transform = Transform3D(0.84082186, 0.4148208, 0.34776765, -0.541312, 0.64434266
 [node name="CanvasLayer" parent="." instance=ExtResource("5_cpie4")]
 
 [node name="Spring" parent="." instance=ExtResource("6_udvx3")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.9740143, 2.282862, 0.14786148)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.9740143, 5.3421164, 0.14786148)
 
 [node name="Spring2" parent="." instance=ExtResource("6_udvx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8537583, 0.9849732, 0.14786148)
@@ -165,15 +165,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.273819, 0.4175415, 0.260742
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.078573, 3.4592085, 0)
 
 [node name="Magnet2" parent="." instance=ExtResource("11_cpuyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.470231, 8.069973, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.448201, 6.730402, 0)
 
 [node name="Shootable" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.558533, 4.814987, -0.28100586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.159599, 5.689127, -0.28100586)
 visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 4
-size = Vector3(30.367798, 16.57132, 0.43798828)
+size = Vector3(61.152664, 43.128666, 0.43798828)
 
 [node name="Instructions" type="Node3D" parent="."]
 script = ExtResource("11_mf7v1")

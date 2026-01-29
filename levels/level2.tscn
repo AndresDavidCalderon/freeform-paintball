@@ -30,7 +30,7 @@ material = ExtResource("1_s1bpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
 
 [node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.6233893, 0.7212305, 0, -0.9708728, 0.4630975, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.65790594, 0.6806193, 0, -1.0246294, 0.43702132, 0, 0, 0)
 vertical = -1
 
 [node name="Canon" parent="." instance=ExtResource("2_p1d34")]
@@ -50,8 +50,8 @@ transform = Transform3D(-0.4154396, 0, 0.90962076, 0, 1, 0, -0.90962076, 0, -0.4
 
 [node name="Walls" type="CSGCombiner3D" parent="."]
 use_collision = true
-collision_layer = 13
-collision_mask = 13
+collision_layer = 9
+collision_mask = 9
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67663574, 1.0515137, 5.8247223)
@@ -149,6 +149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15472412, 0.4175415, 0.6395
 
 [node name="Glass" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1250153, 3.0374904, -12.146118)
+use_collision = true
 size = Vector3(20.722565, 0.265625, 39.79419)
 material = ExtResource("5_g1dg4")
 

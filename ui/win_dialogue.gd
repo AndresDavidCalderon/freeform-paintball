@@ -7,7 +7,8 @@ func _ready() -> void:
 	hide()
 
 func on_won():
-	show()
+	if Progress.current_level!=Progress.levels.size()-1:
+		show()
 
 
 func _on_button_pressed() -> void:

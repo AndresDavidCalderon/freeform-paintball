@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6sbe53kcj23y"]
+[gd_scene load_steps=5 format=3 uid="uid://c6sbe53kcj23y"]
 
 [ext_resource type="Script" uid="uid://cnmxfgosixp5m" path="res://ui/win_dialogue.gd" id="1_nb4k0"]
 [ext_resource type="Theme" uid="uid://gcunsglrtwdc" path="res://ui/main_theme.tres" id="1_wl5ax"]
 [ext_resource type="Script" uid="uid://6e0c2l5kqwsq" path="res://ui/pause.gd" id="2_ks8t7"]
+[ext_resource type="Script" uid="uid://c0rx08u4gmtdu" path="res://ui/end_dialogue.gd" id="4_vkava"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="WinDialogue" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,7 +48,6 @@ text = "Next level"
 
 [node name="Pause" type="Panel" parent="."]
 process_mode = 3
-visible = false
 offset_left = 106.0
 offset_top = 88.0
 offset_right = 1045.0
@@ -67,7 +68,7 @@ text = "Paused"
 layout_mode = 0
 offset_left = 64.0
 offset_top = 122.0
-offset_right = 186.0
+offset_right = 198.0
 offset_bottom = 177.0
 text = "Resume"
 
@@ -75,10 +76,57 @@ text = "Resume"
 layout_mode = 0
 offset_left = 66.0
 offset_top = 190.0
-offset_right = 188.0
+offset_right = 198.0
 offset_bottom = 245.0
 text = "Restart"
+
+[node name="EndDialogue" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = 105.0
+offset_right = -114.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wl5ax")
+script = ExtResource("4_vkava")
+
+[node name="Title" type="Label" parent="EndDialogue"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 529.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 48
+text = "Thank you for playing!"
+
+[node name="Label" type="Label" parent="EndDialogue"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 117.0
+offset_right = 91.0
+offset_bottom = 162.0
+text = "I hope you had fun and enjoyed the gimmick,
+even if it's only a couple of levels."
+
+[node name="Back" type="Button" parent="EndDialogue"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -336.0
+offset_top = -74.0
+offset_right = -32.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Go to main menu"
 
 [connection signal="pressed" from="WinDialogue/Button" to="WinDialogue" method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/Restart" to="Pause" method="_on_restart_pressed"]
+[connection signal="pressed" from="EndDialogue/Back" to="EndDialogue" method="_on_back_pressed"]
