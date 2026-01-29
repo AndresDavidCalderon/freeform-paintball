@@ -54,3 +54,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799597, -0.7021942, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8470697, -0.4638908, 0)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_61w3m")]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4675803, 0)
+pixel_size = 0.02
+billboard = 1
+text = "Click on the flippers to shoot the ball"

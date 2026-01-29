@@ -30,7 +30,7 @@ material = ExtResource("1_s1bpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
 
 [node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.6230404, 0.7216645, 0, -0.97032946, 0.46337613, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6233893, 0.7212305, 0, -0.9708728, 0.4630975, 0, 0, 0)
 vertical = -1
 
 [node name="Canon" parent="." instance=ExtResource("2_p1d34")]
