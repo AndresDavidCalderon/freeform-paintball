@@ -7,7 +7,6 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="WinDialogue" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,7 +26,7 @@ offset_top = 39.0
 offset_right = 431.0
 offset_bottom = 106.0
 theme_override_font_sizes/font_size = 48
-text = "Yahoo! you won"
+text = "Congratulations."
 
 [node name="Button" type="Button" parent="WinDialogue"]
 layout_mode = 1
@@ -47,6 +46,7 @@ text = "Next level"
 
 [node name="Pause" type="Panel" parent="."]
 process_mode = 3
+visible = false
 offset_left = 106.0
 offset_top = 88.0
 offset_right = 1045.0

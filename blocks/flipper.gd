@@ -15,5 +15,5 @@ func _physics_process(delta: float) -> void:
 		$FlipperBody.apply_force(Vector3.UP*force*force_multiplier,$FlipperBody/ForceCenter.position)
 
 func on_tried_to_pick(intersection):
-	if (not intersection.is_empty()) and intersection["collider"]==$FlipperBody:
+	if (not intersection.is_empty()) and intersection["collider"]==$Pickable:
 		$AnimationPlayer.play("bump")

@@ -1,4 +1,3 @@
-@tool
 extends Node3D
 
 signal switched(on:bool)
@@ -8,6 +7,7 @@ signal switched(on:bool)
 @export var force=0.1
 @export var enabled_material:StandardMaterial3D
 @export var disabled_material:StandardMaterial3D
+var light_force=1
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
@@ -23,8 +23,10 @@ func set_enabled(new_enabled):
 	enabled=new_enabled
 	if enabled:
 		$Shape.material=enabled_material
+		$OmniLight3D.light_energy=light_force
 	else:
 		$Shape.material=disabled_material
+		$OmniLight3D.light_energy=0
 	switched.emit(enabled)
 
 func on_tried_to_pick(intersection):

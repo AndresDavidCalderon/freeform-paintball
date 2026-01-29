@@ -104,8 +104,8 @@ size = Vector3(30.101868, 19.171326, 0.8215723)
 material = ExtResource("4_kkm8t")
 
 [node name="ceiling" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 13.156827, 0.09408486)
-size = Vector3(24.178345, 0.50138855, 3.1953223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.892395, 13.156827, -0.22079802)
+size = Vector3(24.178345, 0.50138855, 2.5655565)
 material = ExtResource("4_kkm8t")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]

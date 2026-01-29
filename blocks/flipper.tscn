@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfuii8yqcv43f"]
+[gd_scene load_steps=10 format=3 uid="uid://bfuii8yqcv43f"]
 
 [ext_resource type="Script" uid="uid://be1jxp5je2ue5" path="res://blocks/flipper.gd" id="1_wvv0j"]
 [ext_resource type="Script" uid="uid://55qrxg1chlnh" path="res://blocks/flipper_body.gd" id="2_14qvk"]
@@ -72,6 +72,9 @@ _data = {
 &"bump": SubResource("Animation_sjb42")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_14qvk"]
+size = Vector3(2.8373413, 0.70874023, 1)
+
 [node name="Flipper" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2518221)
 script = ExtResource("1_wvv0j")
@@ -79,8 +82,6 @@ force = 100.0
 
 [node name="FlipperBody" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5370083, 0.010429978, 0)
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("2_14qvk")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="FlipperBody"]
@@ -126,6 +127,15 @@ node_b = NodePath("../FlipperHolder")
 libraries = {
 &"": SubResource("AnimationLibrary_pdtm5")
 }
+
+[node name="Pickable" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5752666, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1065979, 0.010375977, 0)
+shape = SubResource("BoxShape3D_14qvk")
 
 [connection signal="input_event" from="FlipperBody" to="." method="_on_flipper_body_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="FlipperBody" method="_on_animation_player_animation_finished"]

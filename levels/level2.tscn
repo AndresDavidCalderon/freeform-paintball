@@ -30,7 +30,7 @@ material = ExtResource("1_s1bpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06558907, 1.2097085, -0.16352272)
 
 [node name="CameraPaner" parent="Ball/CameraStabilizer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.6120073, 0.7358367, 0, -0.95314646, 0.47247604, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6230404, 0.7216645, 0, -0.97032946, 0.46337613, 0, 0, 0)
 vertical = -1
 
 [node name="Canon" parent="." instance=ExtResource("2_p1d34")]
@@ -78,15 +78,15 @@ size = Vector3(0.94179153, 3.4291382, 18.937054)
 material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82656336, 1.6640549, -13.806259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82656336, 1.2542381, -13.806259)
 use_collision = true
-size = Vector3(5.4997044, 3.1920013, 1.3558083)
+size = Vector3(5.4997044, 2.3723679, 1.3558083)
 material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6644611, 1.7090759, -14.673155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6644611, 1.333725, -14.673155)
 use_collision = true
-size = Vector3(0.94179153, 3.4291382, 11.637669)
+size = Vector3(0.94179153, 2.6784363, 11.637669)
 material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Walls"]
@@ -108,9 +108,9 @@ size = Vector3(0.8166599, 2.2023926, 14.406101)
 material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2990007, 2.1030273, -8.881865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2990007, 1.7581787, -8.881865)
 use_collision = true
-size = Vector3(8.219879, 3.1030273, 0.86024475)
+size = Vector3(8.219879, 2.41333, 0.86024475)
 material = ExtResource("1_s1bpp")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Walls"]
@@ -148,8 +148,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15472412, 0.4175415, 0.6395
 [node name="CanvasLayer" parent="." instance=ExtResource("4_py88r")]
 
 [node name="Glass" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1250153, 3.2191567, -12.146118)
-size = Vector3(20.722565, 1, 39.79419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1250153, 3.0374904, -12.146118)
+size = Vector3(20.722565, 0.265625, 39.79419)
 material = ExtResource("5_g1dg4")
 
 [node name="Instructions" type="Node3D" parent="."]

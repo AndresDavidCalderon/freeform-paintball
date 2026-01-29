@@ -53,3 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25168788, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Colission"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08363342, 0.10161841, 0.0012512207)
 shape = SubResource("BoxShape3D_s3y5y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.120000005, 1, 0.13466668, 1)
+light_energy = 0.0
